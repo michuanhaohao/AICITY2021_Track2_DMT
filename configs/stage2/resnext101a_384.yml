@@ -1,0 +1,61 @@
+MODEL:
+  PRETRAIN_CHOICE: 'self'
+  PRETRAIN_PATH: './logs/stage1/resnext101a_384/resnext101_ibn_a_80.pth'
+  METRIC_LOSS_TYPE: 'triplet'
+  IF_LABELSMOOTH: 'off'
+  IF_WITH_CENTER: 'no'
+  NAME: 'resnext101_ibn_a'
+  NO_MARGIN: True
+  DEVICE_ID: ('0')
+
+INPUT:
+  SIZE_TRAIN: [384, 384]
+  SIZE_TEST: [384, 384]
+  PROB: 0.5 # random horizontal flip
+  RE_PROB: 0.5 # random erasing
+  PADDING: 10
+
+DATASETS:
+  NAMES: ('aic')
+
+DATALOADER:
+  SAMPLER: 'softmax_triplet'
+  NUM_INSTANCE: 8
+  NUM_WORKERS: 8
+
+SOLVER:
+  OPTIMIZER_NAME: 'SGD'
+  MAX_EPOCHS: 3
+  BASE_LR: 0.0004
+  IMS_PER_BATCH: 96
+  STEPS: [40, 70]
+  GAMMA: 0.1
+  WARMUP_FACTOR: 0.01
+  WARMUP_EPOCHS: 10
+  WARMUP_METHOD: 'linear'
+  LARGE_FC_LR: True
+  BIAS_LR_FACTOR: 2
+  CHECKPOINT_PERIOD: 3
+  LOG_PERIOD: 50
+  EVAL_PERIOD: 10000
+  FP16_ENABLED: True
+
+TEST:
+  IMS_PER_BATCH: 128
+  RE_RANKING: True
+  RE_RANKING_TRACK: True
+  WEIGHT: './logs/stage2/resnext101a_384/v1/resnext101_ibn_a_2.pth'
+  NECK_FEAT: 'after'
+  FEAT_NORM: 'yes'
+  FLIP_FEATS: 'no'
+  EVAL: True
+  FIC: True
+  CROP_TEST: True
+  # LA: 0.29
+  LA: 0.11
+
+STAGE2:
+  EPS: 0.55
+  LA: 0.0005
+      
+OUTPUT_DIR: './logs/stage2/resnext101a_384/v1'

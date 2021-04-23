@@ -1,0 +1,52 @@
+MODEL:
+  PRETRAIN_CHOICE: 'imagenet'
+  PRETRAIN_PATH: './pretrained/densenet169_ibn_a-9f32c161.pth'
+  METRIC_LOSS_TYPE: 'triplet'
+  IF_LABELSMOOTH: 'off'
+  IF_WITH_CENTER: 'no'
+  NAME: 'densenet169_ibn_a'
+  NO_MARGIN: True
+  DEVICE_ID: ('4')
+
+INPUT:
+  SIZE_TRAIN: [384, 384]
+  SIZE_TEST: [384, 384]
+  PROB: 0.5 # random horizontal flip
+  RE_PROB: 0.5 # random erasing
+  PADDING: 10
+
+DATASETS:
+  NAMES: ('aic_sim')
+  PLUS_NUM_ID: 100
+
+DATALOADER:
+  SAMPLER: 'softmax_triplet'
+  NUM_INSTANCE: 8
+  NUM_WORKERS: 8
+
+SOLVER:
+  OPTIMIZER_NAME: 'SGD'
+  MAX_EPOCHS: 80
+  BASE_LR: 0.01
+  IMS_PER_BATCH: 96
+  STEPS: [40, 70]
+  GAMMA: 0.1
+  WARMUP_FACTOR: 0.01
+  WARMUP_EPOCHS: 10
+  WARMUP_METHOD: 'linear'
+  LARGE_FC_LR: True
+  CHECKPOINT_PERIOD: 80
+  LOG_PERIOD: 200
+  EVAL_PERIOD: 10000
+  FP16_ENABLED: True
+
+TEST:
+  IMS_PER_BATCH: 128
+  RE_RANKING: False
+  RE_RANKING_TRACK: True
+  NECK_FEAT: 'after'
+  FEAT_NORM: 'yes'
+  FLIP_FEATS: 'on'
+  EVAL: True
+  FIC: True
+OUTPUT_DIR: './logs/stage1/densenet169a_384'
