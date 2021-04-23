@@ -39,9 +39,9 @@ The code is modified from [AICITY2020_DMT_VehicleReID](https://github.com/heshut
 ```
 
 5. Put pre-trained models into ./pretrained/
-		- resnet101_ibn_a-59ea0ac6.pth, densenet169_ibn_a-9f32c161.pth, resnext101_ibn_a-6ace051d.pth and se_resnet101_ibn_a-fabed4e2.pth can be downloaded from [IBN-Net](https://github.com/XingangPan/IBN-Net)
-		- resnest101-22405ba7.pth can be downloaded from [ResNest](https://github.com/zhanghang1989/ResNeSt)
-		- jx_vit_base_p16_224-80ecf9dd.pth can be downloaded from [here](https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-vitjx/jx_vit_base_p16_224-80ecf9dd.pth)
+	-  resnet101_ibn_a-59ea0ac6.pth, densenet169_ibn_a-9f32c161.pth, resnext101_ibn_a-6ace051d.pth and se_resnet101_ibn_a-fabed4e2.pth can be downloaded from [IBN-Net](https://github.com/XingangPan/IBN-Net)
+	-  resnest101-22405ba7.pth can be downloaded from [ResNest](https://github.com/zhanghang1989/ResNeSt)
+	-  jx_vit_base_p16_224-80ecf9dd.pth can be downloaded from [here](https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-vitjx/jx_vit_base_p16_224-80ecf9dd.pth)
 ## Trainint and Test
 
 We utilize 1 GPU (32GB) for training. You can train and test one backbone as follow. 
