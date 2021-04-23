@@ -35,7 +35,7 @@ The code is modified from [AICITY2020_DMT_VehicleReID](https://github.com/heshut
 │   	    ├── image_query/		
 │   ├── AIC21_Track2_ReID_Simulation/
 │   	├── sys_image_train/
-│   	├── ssys_image_train_tr/
+│   	├── sys_image_train_tr/
 ```
 
 5. Put pre-trained models into ./pretrained/
