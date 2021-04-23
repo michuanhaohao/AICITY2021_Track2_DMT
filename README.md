@@ -83,7 +83,7 @@ If you find our work useful in your research, please consider citing:
 ```
 @inproceedings{luo2021empirical,
  title={An Empirical Study of Vehicle Re-Identification on the AI City Challenge},
- author={Luo, Hao and Chen, Weihua and Xu Xianzhe and Gu Jianyang and Zhang, Yuqi and Chong Liu and Jiang Qiyi and He, Shuting and Wang, Fan and Li, Hao and Jiang, Wei},
+ author={Luo, Hao and Chen, Weihua and Xu Xianzhe and Gu Jianyang and Zhang, Yuqi and Chong Liu and Jiang Qiyi and He, Shuting and Wang, Fan and Li, Hao},
  booktitle={Proc. CVPR Workshops},
  year={2021}
 }
