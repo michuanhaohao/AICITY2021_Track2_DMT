@@ -57,8 +57,8 @@ python train.py --config_file configs/stage1/se_resnet101a_384.yml MODEL.DEVICE_
 python train_stage2_v1.py --config_file configs/stage2/se_resnet101a_384.yml MODEL.DEVICE_ID "('6')" OUTPUT_DIR './logs/stage2/se_resnet101a_384/v1'
 python train_stage2_v2.py --config_file configs/stage2/se_resnet101a_384.yml MODEL.DEVICE_ID "('6')" OUTPUT_DIR './logs/stage2/se_resnet101a_384/v2'
 
-python test.py --config_file configs/stage2/se_resnet101a_384.yml MODEL.DEVICE_ID "('6')" TEST.WEIGHT './logs/stage2/se_resnet101a_384/v1/se_resnet101_ibn_a_2.pth' OUTPUT_DIR './logs/stage2/transreid_256/v1'
-python test.py --config_file configs/stage2/se_resnet101a_384.yml MODEL.DEVICE_ID "('6')" TEST.WEIGHT './logs/stage2/se_resnet101a_384/v2/se_resnet101_ibn_a_2.pth' OUTPUT_DIR './logs/stage2/transreid_256/v2'
+python test.py --config_file configs/stage2/se_resnet101a_384.yml MODEL.DEVICE_ID "('6')" TEST.WEIGHT './logs/stage2/se_resnet101a_384/v1/se_resnet101_ibn_a_2.pth' OUTPUT_DIR './logs/stage2/se_resnet101a_384/v1'
+python test.py --config_file configs/stage2/se_resnet101a_384.yml MODEL.DEVICE_ID "('6')" TEST.WEIGHT './logs/stage2/se_resnet101a_384/v2/se_resnet101_ibn_a_2.pth' OUTPUT_DIR './logs/stage2/se_resnet101a_384/v2'
 
 
 # TransReID
